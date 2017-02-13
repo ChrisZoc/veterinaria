@@ -1,0 +1,150 @@
+body {
+	/*background: #27d998;*/
+	background: url(../images/animals.jpg) no-repeat fixed center;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	font-family: "helvetica";
+	color: #000;
+	font-size: 14px;
+}
+
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+	background-color: #B0E0E6;
+	height: 600px;
+}
+
+header {
+	background-color: #2f79de;
+	height: 155px;
+}
+
+header h1 {
+	padding-top: 20px;
+	text-align: center;
+	color: #000, navy;
+	padding: 1em;
+	font-size: 40px;
+	font-family: "helvetica";
+}
+
+#logo {
+	float: left;
+    position: relative;
+}
+
+nav {
+	background-color: #33cc66;
+	height: 37px;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav a {
+	display: block;
+	text-decoration: none;
+	float: left;
+	color: #000;
+	border-right: 1px solid #fff;
+	padding: 10px 25px;
+	font-size: 15px;
+}
+
+nav a:hover {
+	background-color: #ccffcc;
+	padding: 15px 0 0 -14px;
+}
+
+div.ventana {
+	left: -440px;
+	position: relative;
+	top: -5px;
+	width: 220px;
+	background-color: #FFFACD;
+	margin: 1px 650px;
+	margin-top: -380px;
+	margin-right: 150px;
+	border: 2px solid #0000FF;
+}
+
+div.titulo {
+	padding: 5px 5px 5px;
+	color: #FFF;
+	background-color: blue;
+	background-image: linear-gradient (#0099FF, blue);
+}
+
+div.contenido {
+	padding: 5px 10px;
+}
+
+div.ventana1 {
+	left: 330px;
+	position: relative;
+	top: -530px;
+	width: 150px;
+	background-color: #FFFACD;
+	margin: 1px 650px;
+	margin-top: 295px;
+	margin-right: 15px;
+	border: 2px solid #0000FF;
+}
+
+div.titulo1 {
+	padding: 5px 5px 5px;
+	color: #FFF;
+	background-color: blue;
+	background-image: linear-gradient (#0099FF, blue);
+}
+
+div.contenido1 {
+	padding: 5px 10px;
+}
+
+div.ventana2 {
+	left: 330px;
+	position: relative;
+	top: -530px;
+	width: 150px;
+	background-color: #FFFACD;
+	margin: 1px 650px;
+	margin-top: 20px;
+	margin-right: 15px;
+	border: 2px solid #0000FF;
+}
+
+div.titulo2 {
+	padding: 5px 5px 5px;
+	color: #FFF;
+	background-color: blue;
+	background-image: linear-gradient (#0099FF, blue);
+}
+
+div.contenido2 {
+	padding: 5px 10px;
+}
+
+#imagencentral {
+	margin-left: 255px;
+	margin-top: 25px;
+}
+
+footer {
+	width: 960px; 
+	height: 30px; 
+	color: black; 
+	background: #2f79de;
+	margin-top: -455px; 
+	margin-left: 187px;
+}
+
+footer p {
+	padding: 0 auto;
+}

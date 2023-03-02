@@ -1,18 +1,14 @@
 <?php
 require("Cabeza.php");
 require("SQL.php");
-?>
-<?php
-if($_POST){
 
+if($_POST){
     $queEmp = "INSERT INTO `veterinaria`.`cit_cita` (`cit_id`, `cit_fecha`, `cit_hora`, `cit_programacion`, `estado`, `doc_cit_id`, `infm_cit_id`) 
 		VALUES (NULL, '".$_POST["Fecha"]."', '".$_POST["Hora"].":00', '".$_POST["Programa"]."', 'Pendiente', '".$_POST["Doctor"]."', '".$_POST["Paciente"]."')";
     //echo $queEmp."<br>";
-    $resEmp = mysql_query($queEmp, $conexion) or die(mysql_error()); 
+    $resEmp = mysqli_query($conexion, $queEmp) or die(mysqli_error($conexion));
     echo "<p><h2><b>Creacion de la cita</b></h2></p>";
-
-}
-else{
+} else {
 ?>
 <div id="main3">
     <center><p>
@@ -36,8 +32,8 @@ else{
             <?php
     $queEmp = "SELECT * FROM emp_empleados where car_emp_id = '3'";
     //echo $queEmp;
-    $resEmp = mysql_query($queEmp, $conexion) or die(mysql_error());
-    while ($row = mysql_fetch_row($resEmp)){
+    $resEmp = mysqli_query($conexion, $queEmp) or die(mysqli_error($conexion));
+    while ($row = mysqli_fetch_row($resEmp)){
         echo "<option value=".$row[0]." selected>".$row[1]."</option>";
     }
             ?>
@@ -47,8 +43,8 @@ else{
             <?php
     $queEmp = "SELECT * FROM infm_informacion_mascotas";
     //echo $queEmp;
-    $resEmp = mysql_query($queEmp, $conexion) or die(mysql_error());
-    while ($row = mysql_fetch_row($resEmp)){
+    $resEmp = mysqli_query($conexion, $queEmp) or die(mysqli_error($conexion));
+    while ($row = mysqli_fetch_row($resEmp)){
         echo "<option value=".$row[0]." selected>".$row[1]."</option>";
     }
             ?>

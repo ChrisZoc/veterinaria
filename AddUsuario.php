@@ -13,26 +13,26 @@ include_once "Cabeza.php";
             <p class="text-muted"><h2><b>Añadir Usuario:</b></h2></p>
             <div class="form-group">
                 <label for="exampleInputEmail1"><b>Nombre:</b></label>
-    <input class="form-control" id="exampleInputEmail1" placeholder="Usuario" name="usuario">
+                <input class="form-control" id="exampleInputEmail1" placeholder="Usuario" name="usuario">
                 <label for="exampleInputPassword1"><b>Contraseña:</b></label>
-    <input type="Password" class="form-control" id="exampleInputPassword1" placeholder=" Contraseña" name="password">
+                <input type="Password" class="form-control" id="exampleInputPassword1" placeholder=" Contraseña" name="password">
                 <label for="exampleInputPassword1"><b>Confirmar-Contraseña:</b></label>
-    <input type="Password" class="form-control" id="exampleInputPassword1" placeholder=" Confirmar-Contraseña" name="repassword">
-  </div>
+                <input type="Password" class="form-control" id="exampleInputPassword1" placeholder=" Confirmar-Contraseña" name="repassword">
+            </div>
     
-    <p><b>Cargo: </b>
-    <select name="Cargo">
-        <?php
-        $queEmp = "SELECT * FROM `car_cargos`";
-        $resEmp = mysql_query($queEmp, $conexion) or die(mysql_error());
-        while ($row = mysql_fetch_row($resEmp)){
-            echo "<option value=".$row[0]." selected>".$row[1]."</option>";
-            }
-        ?>
-    </select>
-    </p>
-<input type="submit" name="enviar" value="Ingresar" class="btn btn-primary">
-    </div>  
+            <p><b>Cargo: </b>
+            <select name="Cargo">
+                <?php
+                $queEmp = "SELECT * FROM `car_cargos`";
+                $resEmp = mysqli_query($conexion, $queEmp) or die(mysqli_error($conexion));
+                while ($row = mysqli_fetch_row($resEmp)){
+                    echo "<option value=".$row[0]." selected>".$row[1]."</option>";
+                }
+                ?>
+            </select>
+            </p>
+            <input type="submit" name="enviar" value="Ingresar" class="btn btn-primary">
+        </div>  
 
 
 </form>
@@ -58,16 +58,16 @@ if(isset($_POST['enviar']))
 
         $sql = 'SELECT * FROM usr_usuario';
 
-        $rec = mysql_query($sql);
+        $rec = mysqli_query($conexion, $sql);
 
         $verificar_usuario = 0;
 
  
 
-        while($result = mysql_fetch_object($rec))
+        while($result = mysqli_fetch_object($rec))
         {
 
-            if($result->usuario == $_POST['usuario'])
+            if($result->usr_username == $_POST['usuario'])
 
             {
 
@@ -95,7 +95,7 @@ if(isset($_POST['enviar']))
 
                 $sql = "INSERT INTO usr_usuario (usr_username, usr_passwrd) VALUES ('$usuario','$contra')";
 
-                mysql_query($sql);
+                mysqli_query($conexion, $sql);
 
  
 
@@ -128,6 +128,7 @@ if(isset($_POST['enviar']))
 ?>
 
 <div id="footer5">
-      <p>Copyright &copy;</p>
+    <footer>
+        <p>Copyright &copy;</p>
     </footer>
-  </div>
+</div>

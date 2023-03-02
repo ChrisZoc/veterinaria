@@ -8,7 +8,7 @@ require("SQL.php");
 		  	$queEmp = "INSERT INTO `veterinaria`.`prop_propietarios` (`prop_id`, `prop_nombre`, `prop_apellido`, `prop_direccion`, `prop_telcasa`, `gen_genero_gen_id`) 
 		  	VALUES (null, '".$_POST["Nombre"]."', '".$_POST["Apellido"]."', '".$_POST["Direcion"]."', '".$_POST["TelefonoCasa"]."', '1');";
 			//echo $queEmp."<br>";
-			$resEmp = mysql_query($queEmp, $conexion) or die(mysql_error()); 
+    		$resEmp = mysqli_query($conexion, $queEmp) or die(mysqli_error($conexion)); 
 			echo "<div class='alert alert-success' role='alert'>El usuario se creo correctamente </div>";
 		 }
 	 else{	 

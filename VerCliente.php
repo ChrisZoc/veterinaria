@@ -8,14 +8,15 @@ error_reporting(0);
 	<?php
 	 	  	$queEmp = "SELECT * FROM `prop_propietarios`";
 			//echo $queEmp;
-			$resEmp = mysql_query($queEmp, $conexion) or die(mysql_error()); 
+     		 $resEmp = mysqli_query($conexion, $queEmp) or die(mysqli_error($conexion));
+
 			echo "<p><h2><b>Lista de clientes</b></h2></p>";		 
 	?>
 				<center>
 		<?php
 		echo "<table>"; 
 		echo "<tr><td><b>ID</b></td><td><b>Nombre</b></td><td><b>Apellido</b></td><td><b>Direcion</b></td><td><b>Telefono</b></td></tr> \n"; 
-			while ($row = mysql_fetch_row($resEmp)){ 
+			while ($row = mysqli_fetch_row($resEmp)){ 
 				echo "<tr>";
 				echo "<td>$row[0]</td>";
 				echo "<td>$row[1]</td>";

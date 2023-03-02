@@ -1,4 +1,3 @@
-
 <?php
 require("Cabeza.php");
 require("SQL.php");
@@ -11,7 +10,7 @@ error_reporting(0);
 		 if($_POST["pass1"] == $_POST["pass2"]){
 			$queEmp = "UPDATE `veterinaria`.`usr_usuarios` SET `usr_passwd` = '".$_POST["pass1"]."' WHERE `usr_usuarios`.`usr_username` = '".$_SESSION["Usuario"]."'";
 			//echo $queEmp;
-			$resEmp = mysql_query($queEmp, $conexion) or die(mysql_error()); 
+                $resEmp = mysqli_query($conexion, $queEmp) or die(mysqli_error($conexion));
 			echo "<p><h2><b>Modificación de contraseña satisfactoria</b><h2></p>";
 			 }
 		 else

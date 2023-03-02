@@ -1,4 +1,3 @@
 <?php
-$conexion = mysql_connect("localhost", "root", "");
-mysql_select_db("veterinaria", $conexion);
+$conexion = mysqli_connect("localhost", "maestria_veterin", "H6DrPQkSWnpd","maestria_veterinaria");
 ?>
